@@ -48,6 +48,16 @@
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        @media (max-width: 1024px) {
+            #side-panel {
+                display: none; /* Hide the side panel when the width is 1024px or smaller */
+            }
+
+            #map {
+                flex-grow: 1; /* Expand the map to take the full width when the side panel is hidden */
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,7 +82,7 @@
     
         let map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+            style: 'mapbox://styles/mapbox/navigation-night-v1', // style URL
             zoom: 1, // starting zoom
             center: [0, 0] // starting center
         });
